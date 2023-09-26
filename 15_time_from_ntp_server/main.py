@@ -45,26 +45,6 @@ def connect_wifi(ssid, psk, timeout):
     except Exception as e:
         print(f"Error in wifi connection > {e}")
         sys.exit()
-
-
-# method to connect with webpage and read data using get method
-def read_webpage(wlan):
-    try:
-        # ensure the wi-fi connection
-        if wlan.isconnected() == True:
-            # get response form the webpage 
-            req = requests.get("https://example.com")
-            # check the sttaus code
-            # for successfull request the status code is 200
-            print("Request succesfull" if req.status_code == 200 else "Request failed")
-            # print the result in text format
-            print(req.text)
-            req.close()
-        else:
-            print("check your wi-fi connection")
-    except Exception as e:
-        print(f"Error in reading webpage > {e}")
-        sys.exit()
         
 # method to get date and time
 def get_time():
