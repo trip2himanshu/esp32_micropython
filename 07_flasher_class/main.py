@@ -5,18 +5,19 @@
 # flash the multiple leds independently
 
 import flasher
+import sys
 
 # object for led 1
 led1 = flasher.Flasher(8,500,900)
 # object for led 2
 led2 = flasher.Flasher(47,300,1200)
 
-while True:
-    try:
+try:
+    while True:
         # update the states of leds
         led1.update()
         led2.update()
-    except KeyboardInterrupt:
-        print("Exit")
-        break
+except KeyboardInterrupt:
+    print("Exit")
+    sys.exit()
     
