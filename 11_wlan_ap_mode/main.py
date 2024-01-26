@@ -17,7 +17,7 @@ try:
     time.sleep(1)
     wlan.active(True)
     # wi-fi configuration
-    wlan.config(essid='myESP', password='123456789', authmode=network.AUTH_WPA_WPA2_PSK)
+    wlan.config(ssid='myESP', password='123456789', authmode=network.AUTH_WPA_WPA2_PSK)
     # print the ip address of esp device
     print(wlan.ifconfig())
 except Exception as e:
